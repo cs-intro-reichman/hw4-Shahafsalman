@@ -29,7 +29,7 @@ public class Primes {
 
         System.out.println("Prime numbers up to " + n);
         printsArray(isPrime);
-        System.out.println("there are " + primeCount(isPrime) + " primes between 2 and " + n + " (" + (int)primePercent(isPrime, n) + "% are primes)");
+        System.out.println("There are " + primeCount(isPrime) + " primes between 2 and " + n + " (" + (int)primePercent(isPrime, n) + "% are primes)");
 
         
     }
