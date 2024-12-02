@@ -38,7 +38,25 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
-        return false;
+        String string1 = str1;
+    String string2 = str2;
+    int count = 0;
+
+    for (int i = 0; i < string2.length(); i++)
+    {
+        for (int n = 0; n < string1.length(); n++)
+        {
+            if (string1.charAt(n) == string2.charAt(i))
+            {
+                count++;
+                n = string1.length();
+            }
+        }
+    }
+    if (count == string2.length())
+    {
+        return true;   
+    }
+    return false;
     }
 }
