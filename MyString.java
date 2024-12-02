@@ -18,7 +18,7 @@ public class MyString {
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        String newString = " ";
+        String newString = "";
     int asciiValue = 0;
     for (int i = 0; i < str.length(); i++)
     {
