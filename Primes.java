@@ -1,7 +1,7 @@
 public class Primes {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
-        boolean[] isPrime = new boolean[n];
+        boolean[] isPrime = new boolean[n + 1];
         for (int i = 0; i < isPrime.length; i++)
         {
             if (i > 1) {
@@ -27,7 +27,7 @@ public class Primes {
         }
 
 
-        System.out.println("prime numbers up to " + n);
+        System.out.println("Prime numbers up to " + n);
         printsArray(isPrime);
         System.out.println("there are " + primeCount(isPrime) + " primes between 2 and " + n + " (" + (int)primePercent(isPrime, n) + "% are primes)");
 
@@ -58,7 +58,7 @@ public class Primes {
 
   public static double primePercent (boolean[] arr, int n)   //recieves the array and the n 
   {
-      return ((double)10 / (double)30) * 100 ;
+      return ((double)primeCount(arr) / (double)n) * 100 ;
       
   }
 
