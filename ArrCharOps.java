@@ -132,7 +132,7 @@ public class ArrCharOps {
         }
         return subArray;
     }
-    }
+    
 
      /** Returns a single integer that represents the given array. This integer is sometimes 
      *  referred to as the array's "hash code". Later in the course we'll explain what these 
@@ -142,8 +142,20 @@ public class ArrCharOps {
      *  The hash value of an empty array is zero.
      */
     public static long hashCode(char[] arr) {
-        // Replace the following statement with your code
-        return 0;
+        if (arr.length == 0) {      //this code is not correct
+            return 0;
+            }
+            else
+            {
+                int n = arr.length;     //4
+                int powNum = n - 1;     //3
+                long hashCode = 0;      
+                for (int i = 0; i < n; i++){
+                        hashCode += arr[i] * (Math.pow( 7, powNum));
+                        powNum -= 1;
+                }
+                return hashCode;
+            }
     }
 
     /**
@@ -172,7 +184,31 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        // Replace the following statement with your code
+        int asciStr1 = 0;
+        int asciStr2 = 0;
+        if ((str1 == "") || (str2 == "")) {
+            return -2;
+        }
+        
+        for (int i = 0; i < str1.length(); i++)
+        {
+                asciStr1 = (int)str1.charAt(i);
+                asciStr2 = (int)str2.charAt(i);
+                if (asciStr1 > asciStr2) {
+                    return 1;
+                }
+                else if (asciStr1 < asciStr2)
+                {
+                    return -1;
+                }
+            
+        }
+        if (str1.length() < str2.length()) {
+            return -1;
+        }
+        else if (str1.length() > str2.length()) {
+            return 1;
+        }
         return 0;
     }
 }
